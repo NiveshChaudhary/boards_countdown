@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Countdown
+        </title>
+
+        <link rel="stylesheet" href="try_1.css">
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1 class="heading">Boards have begun. Now prove your obsession.</h1>
+            <div class="q-2">
+                Be just "good enough" to make jealous, but "too far ahead" for them to catch up.
+            </div>
+
+
+            <div class="countdown">
+                <div class="time-box">
+                    <div>
+                        <span id="days">00</span> D<br>
+                    </div>
+                </div>
+
+                <div class="time-box">
+                    <div>:
+                        <span id="hours">00</span> H<br>
+                    </div>
+                </div>
+
+                <div class="time-box">
+                    <div>:
+                        <span id="minutes">00</span> M<br>
+                    </div>
+                </div>
+
+                <div class="time-box">
+                    <div>:
+                        <span id="seconds">00</span> S<br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="q-1">
+                "Lock yourself in a room and study until you collapse, true brilliance comes from obsession" — Issac Newton
+            </div>
+
+        </div>
+
+
+        <script>
+            // SET YOUR TARGET DATE HERE (Year, Month-1, Day, Hour, Minute, Second)
+            const targetDate = new Date("January 31, 2026 00:00:00").getTime();
+
+            const countdown = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                // If countdown is over
+                if (distance < 0) {
+                    document.querySelector(".countdown").innerHTML = "<h2 style='grid-column: 1/-1; color: #ff4d4d;'>EXAMS OVER. GO TOUCH GRASS.</h2>";
+                    clearInterval(countdown);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the DOM
+                document.getElementById("days").textContent = days.toString().padStart(2, '0');
+                document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            }, 1000); // Update every second
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    background: url("darkwallpaper.jpg") center/cover fixed no-repeat;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.heading {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.q-2 {
+    color: lightgrey;
+    font-size: 24px;
+    font-style: italic;
+    max-width: 400px;
+    line-height: 1.5;
+    position: relative;
+    left: 500px;     
+    text-align: left;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.time-box {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.time-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.q-1 {
+    color: lightgrey;
+    font-size: 24px;
+    font-style: italic;
+    max-width: 430px;
+    line-height: 1.5;
+    position: relative;
+    right: 380px;     /* pushes it to the left */
+    text-align: left;
+}
